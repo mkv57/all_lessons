@@ -19,16 +19,15 @@ type Employee struct {
 
 func main() {
 
-	//w := new(Job)
-	//w.Title = "ingenier"
-	//w.Salary = 300000
+	w := new(Job) // 1ый вариант
+	w.Title = "ingenier"
+	w.Salary = 300000
 
-	r := new(Employee)
+	r := new(Employee) // 2ой вариант
 	r.Name = Job{
 		Title:  "инженер",
-		Salary: 25000,
+		Salary: 250000, // А по какому варианту правильно заполнять поля?
 	}
 
-	//fmt.Println(w)
-	fmt.Println(r)
+	fmt.Println(w, r)
 }
