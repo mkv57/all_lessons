@@ -30,7 +30,7 @@ func main() {
 			fmt.Println(a[i], " чётное")
 		default:
 			fmt.Println(a[i], " не чётное")
-		} // xчто-то придумал
+		} // что-то придумал
 
 	}
 
