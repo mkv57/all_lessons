@@ -20,10 +20,10 @@ func main() {
 		case 2:
 			fmt.Println("a[", i, "] равно 2")
 		case 3:
-			fmt.Println("a[", i, "] равно 3")
+			fmt.Println("a[", i, "] равно 3", " включение подачи инструмента + с подачей сож")
 			fallthrough
-		case 000:
-			fmt.Println("значения первых 3х значений слайса отработаны")
+		case 4:
+			fmt.Println("a[", i, "] равно 3 или 4", "подача сож")
 		case 5:
 			fmt.Println("a[", i, "] равно 5")
 		case 6:
@@ -36,8 +36,7 @@ func main() {
 			fmt.Println("a[", i, "] равно 9")
 		case 10:
 			fmt.Println("a[", i, "] равно 10")
-		default:
-			fmt.Println("a[", i, "] равно 4")
+
 		}
 
 	}
