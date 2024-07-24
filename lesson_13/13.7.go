@@ -6,22 +6,14 @@ package main
 
 import (
 	"fmt"
-	"error"
 )
 
 func main() {
 
-	a := new(int)
-	c := &a
-	n := 45
-	*c = &n
-	fmt.Println(a)(n int, err )
-	//fmt.Println(a, c, n, *c, *a)
-	if err = !nil {
-		return error
-	}
+	a := new(int) // создал переменную  "а" с типом указателя(*int)
 
-	*a = 88
+	*a = 34 //разыменование
+	fmt.Println(*a, a)
+	// Прошу уточнить "который безопасно обрабатывает такую ситуацию" . КАКАЯ СИТУАЦИЯ ?
 
-	fmt.Println(a, c, n, *c, *a)
 }
