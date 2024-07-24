@@ -18,7 +18,7 @@ func main() {
 
 	i, err := strconv.Atoi(c)
 	if err != nil {
-		fmt.Errorf("kbhsb : %d", i)
+		//fmt.Errorf("kbhsb : %d", i)
 		log.Fatal(err)
 		return
 	}
