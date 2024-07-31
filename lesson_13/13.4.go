@@ -10,14 +10,17 @@ type Rectangle struct {
 	Width, Height int
 }
 
+func (r Rectangle) Change() {
+	r.Width = 11
+}
+
 func main() {
 
 	s := &Rectangle{
-		//Width:  22,
-		//Height: 33,
+		Width:  22,
+		Height: 33,
 	}
-
-	s.Width = 55
+	s.Change()
 
 	fmt.Println(s, s.Height, s.Width)
 }

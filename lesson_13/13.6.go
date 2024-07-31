@@ -10,13 +10,13 @@ import (
 
 func main() {
 
-	a := *new(int)
-	b := *new(int)
-	c := *new(int)
+	a := new(int)
+	b := new(int)
+	c := new(int)
 
-	a = 2
-	b = 3
-	c = 4
+	*a = 2
+	*b = 3
+	*c = 4
 
 	fmt.Println(a, b, c)
 }
