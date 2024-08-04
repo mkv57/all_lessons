@@ -7,6 +7,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -22,13 +23,14 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 	userJSON, err := json.Marshal(hello)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		log.Fatal(err)
+		log.Fatal(err, "ошибка конвертации в json")
 	}
 	_, err = w.Write(userJSON)
 	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		log.Fatal(err)
+		w.WriteHeader(http.StatusInternalServerError) // куда уходит инфа
+		log.Fatal(err, "ошибка отправки данных")
 	}
+	//w.WriteHeader(http.StatusInternalServerError)
 	w.WriteHeader(http.StatusOK)
 	//w.Header().Set("Content-Type", "application/json")     // как это работает?
 	//json.NewEncoder(w).Encode(hello)						// как это работает?
@@ -36,7 +38,7 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/hello", userHandler)
-	log.Println("Server is running on port 8080...")
+	http.HandleFunc("/hell", userHandler)
+	fmt.Println("Server is running on port 8080...")
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
