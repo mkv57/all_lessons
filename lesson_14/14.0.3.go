@@ -25,20 +25,17 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		log.Fatal(err, "ошибка конвертации в json")
 	}
-	_, err = w.Write(userJSON)
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError) // куда уходит инфа
-		log.Fatal(err, "ошибка отправки данных")
-	}
-	//w.WriteHeader(http.StatusInternalServerError)
 	w.WriteHeader(http.StatusOK)
-	//w.Header().Set("Content-Type", "application/json")     // как это работает?
-	//json.NewEncoder(w).Encode(hello)						// как это работает?
+	_, err = w.Write(userJSON)
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 }
 
 func main() {
-	http.HandleFunc("/hell", userHandler)
+	http.HandleFunc("/hello", userHandler)
 	fmt.Println("Server is running on port 8080...")
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }

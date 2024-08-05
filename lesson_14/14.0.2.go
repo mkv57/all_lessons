@@ -27,11 +27,12 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	w.WriteHeader(http.StatusOK)
 	_, err = w.Write(userJSON)
 	if err != nil {
 		log.Fatal(err)
 	}
-	w.WriteHeader(http.StatusOK)
+
 }
 
 func userHandler1(w http.ResponseWriter, r *http.Request) {
@@ -42,11 +43,12 @@ func userHandler1(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	w.WriteHeader(http.StatusOK)
 	_, err = w.Write(productJSON)
 	if err != nil {
 		log.Fatal(err)
 	}
-	w.WriteHeader(http.StatusOK)
+
 }
 
 func main() {

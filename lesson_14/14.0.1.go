@@ -22,15 +22,16 @@ func userHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	w.WriteHeader(http.StatusOK)
 	_, err = w.Write(userJSON)
 	if err != nil {
 		log.Fatal(err)
 	}
-	w.WriteHeader(http.StatusOK)
+
 }
 
 func main() {
 	http.HandleFunc("/hello", userHandler)
 	log.Println("Server is running on port 8080...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
