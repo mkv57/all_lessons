@@ -4,8 +4,8 @@ import "fmt"
 
 var n int = 86 // курс доллара
 
-var tesla Car = Car{500000, n}
-var boing Aircraft = Aircraft{10000000, n}
+var tesla Price = Car{500000, n}
+var boing Aircraft = Aircraft{10000000, n} // какой вариант правильный?
 
 type Price interface {
 	move()
@@ -19,6 +19,7 @@ type Car struct {
 type Aircraft struct {
 	price int // цена в долларах
 	rate  int // курс доллара
+
 }
 
 func (c Car) move() {
