@@ -1,0 +1,10 @@
+1 _, err = w.Write(userJSON)	w.WriteHeader(http.StatusOK) как это понимать?
+2 	log.Fatal(http.ListenAndServe(":8080", nil)) куда эта инфа уходит? Почему nil ?
+3 w.WriteHeader(http.StatusOK)  это как работает, куда идёт инфа?
+
+ Если есть w.WriteHeader(http.StatusOK) то в терминал выводится на status 200  а 
+2024/08/03 12:53:23 http: superfluous response.WriteHeader call from main.userHandler (14.0.3.go:32)
+При этом, если я ставлю юругой статус, то всё равно в терминал выводится то же сообщение.
+
+4 4  w.Header().Set("Content-Type", "application/json")
+ json.NewEncoder(w).Encode(user)  это как работает?
