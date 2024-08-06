@@ -10,7 +10,7 @@ type Rectangle struct {
 	Width, Height int
 }
 
-func (r Rectangle) Change() {
+func (r *Rectangle) Change() {
 	r.Width = 11
 }
 
