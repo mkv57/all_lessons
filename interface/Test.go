@@ -4,12 +4,12 @@ import "fmt"
 
 var n int = 86 // курс доллара
 
-var tesla Price = Car{500000, n}
-var boing Aircraft = Aircraft{10000000, n} // какой вариант правильный?
+var tesla = Car{500000, n}
+var boing = Aircraft{10000000, n}
 
 type Price interface {
 	move()
-	//move1(x,y int) int
+	//move1(y, x int) int
 }
 
 type Car struct {
@@ -21,6 +21,11 @@ type Aircraft struct {
 	rate  int // курс доллара
 
 }
+
+//func (c Car) move1(y, x int) int {
+//	fmt.Print("Автомобиль стоит ", c.price*c.rate)
+//	return y * x
+//}
 
 func (c Car) move() {
 	fmt.Print("Автомобиль стоит ", c.price*c.rate)
